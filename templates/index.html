@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <p>Enter your details below to check if you are at risk of diabetes.</p>
+        <form id="prediction-form">
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" step="1" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="hypertension">Hypertension:</label>
+                <select id="hypertension" name="hypertension" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="heart_disease">Heart Disease:</label>
+                <select id="heart_disease" name="heart_disease" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select> <!-- Added closing </select> -->
+            </div> <!-- Added closing </div> -->
+            <div class="form-group">
+                <label for="smoking_history">Smoking History:</label>
+                <select id="smoking_history" name="smoking_history" required>
+                    <option value="never">never</option>
+                    <option value="No Info">No Info</option>
+                    <option value="current">current</option>
+                    <option value="former">former</option>
+                    <option value="not current">not current</option>
+                    <option value="ever">ever</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="bmi">BMI:</label>
+                <input type="number" id="bmi" name="bmi" step="0.01" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="hba1c_level">HbA1c Level:</label>
+                <input type="number" id="hba1c_level" name="hba1c_level" step="0.1" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="blood_glucose_level">Blood Glucose Level:</label>
+                <input type="number" id="blood_glucose_level" name="blood_glucose_level" step="1" min="0" required>
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result" class="result"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
