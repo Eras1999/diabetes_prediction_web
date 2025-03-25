@@ -6,7 +6,10 @@
 }
 
 body {
-    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    background-image: url('/static/background.jpg'); /* Path to the image in the static folder */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,7 +18,7 @@ body {
 }
 
 .container {
-    background: #fff;
+    background: #baffc4;
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
